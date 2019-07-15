@@ -3,6 +3,7 @@ package org.katas.refactoring;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -21,15 +22,16 @@ public class OrderReceiptTest {
 
     @Test
     public void shouldPrintLineItemAndSalesTaxInformation() {
+        //given
         ArrayList<LineItem> lineItems = new ArrayList<LineItem>() {{
             add(new LineItem("milk", 10.0, 2));
             add(new LineItem("biscuits", 5.0, 5));
             add(new LineItem("chocolate", 20.0, 1));
         }};
-        OrderReceipt receipt = new OrderReceipt(new Order(null, null, lineItems));
-
-        String output = receipt.printReceipt();
-
+        OrderReceipt receipt = new OrderReceipt(new Order(lineItems));
+        //when
+        String[] output = receipt.printLineItemAndSalesTax();
+        //then
         assertThat(output).contains(
                 "milk\t10.0\t2\t20.0\n",
                 "biscuits\t5.0\t5\t25.0\n",
