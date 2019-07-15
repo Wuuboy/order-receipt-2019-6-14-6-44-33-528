@@ -19,6 +19,11 @@ public class Order {
         return lineItems;
     }
 
+    public Order(String customerName, String customerAddress) {
+        this.customerName = customerName;
+        this.customerAddress = customerAddress;
+    }
+
     public Order(String customerName, String customerAddress, List<LineItem> lineItems) {
         this.customerName = customerName;
         this.customerAddress = customerAddress;
