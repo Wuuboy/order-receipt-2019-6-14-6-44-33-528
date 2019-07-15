@@ -53,4 +53,9 @@ public class OrderReceipt {
         output.append("Total Amount").append('\t').append(tot);
         return output.toString();
     }
+
+    public String printCustomerInformation() {
+        String output = String.format("======Printing Orders====== %s%s",order.getCustomerName(),order.getCustomerAddress());
+        return output;
+    }
 }
