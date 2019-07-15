@@ -3,25 +3,25 @@ package org.katas.refactoring;
 import java.util.List;
 
 public class Order {
-    private String nm;
-    private String addr;
-    private List<LineItem> li;
+    private String name;
+    private String address;
+    private List<LineItem> lineItems;
 
-    public Order(String nm, String addr, List<LineItem> li) {
-        this.nm = nm;
-        this.addr = addr;
-        this.li = li;
+    public String getName() {
+        return name;
     }
 
-    public String getCustomerName() {
-        return nm;
-    }
-
-    public String getCustomerAddress() {
-        return addr;
+    public String getAddress() {
+        return address;
     }
 
     public List<LineItem> getLineItems() {
-        return li;
+        return lineItems;
+    }
+
+    public Order(String name, String address, List<LineItem> lineItems) {
+        this.name = name;
+        this.address = address;
+        this.lineItems = lineItems;
     }
 }
